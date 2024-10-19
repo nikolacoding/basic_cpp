@@ -1,0 +1,4 @@
+2 69 20 15
+
+
+type, happiness, hunger, fatigue
