@@ -5,7 +5,6 @@
             "label": "C/C++: g++.exe build active file",
             "command": "g++.exe",
             "args": [
-                "XD",
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\src\\main.cpp",
@@ -19,7 +18,10 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build",
+            "group": { 
+                "kind": "build",
+                "isDefault": true
+        },
             "detail": ""
         },
         {
