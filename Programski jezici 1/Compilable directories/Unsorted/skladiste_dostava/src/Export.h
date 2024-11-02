@@ -6,6 +6,7 @@
 class Export{
 private:
     const std::string _name;
+    int _currentLoad;
     int _maxCapacity;
     int _maxSpeed;
 public:

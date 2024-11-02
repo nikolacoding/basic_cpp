@@ -2,20 +2,19 @@
 #define PACKAGESTACK_H
 
 #include "Package.h"
+#include <vector>
 
 class PackageStack{
 private:
-    const int _capacity;
-    Package* _packageArray;
-    int _topIndex;
+    std::vector<Package> stackVector;
 public:
-    explicit PackageStack(int capacity = 5);
+    explicit PackageStack();
     ~PackageStack();
 
     int getSize();
     bool isEmpty();
-    void push(Package package);
-    Package& pop();
+    void push(const Package package);
+    Package pop(bool& success);
 };
 
 #endif

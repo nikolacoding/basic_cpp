@@ -1,30 +1,32 @@
 #include "PackageStack.h"
 
-PackageStack::PackageStack(int capacity = 5) : 
-                            _capacity(capacity), _packageArray(new Package[capacity]), _topIndex(-1) {
+PackageStack::PackageStack(){
 
 }
 
 PackageStack::~PackageStack(){
-    delete[] _packageArray;
+
 }
 
 int PackageStack::getSize(){
-    return this->_topIndex + 1;
+    return this->stackVector.size();
 }
 
 bool PackageStack::isEmpty(){
-    return this->_topIndex == -1;
+    return this->stackVector.empty();
 }
 
-void PackageStack::push(Package package){
-    if (this->getSize() != this->_capacity){
-        // kopija
-    }
+void PackageStack::push(const Package package){
+    this->stackVector.push_back(package);
 }
 
-Package& PackageStack::pop(){
-    if (!this->isEmpty()){
-        return this->_packageArray[_topIndex--];
+Package PackageStack::pop(bool& success){
+    if (this->isEmpty()){
+        success = false;
+        return Package::emptyPackage;
     }
+    success = true;
+    Package ret = this->stackVector.back();
+    stackVector.pop_back();
+    return ret;
 }

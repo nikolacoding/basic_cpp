@@ -10,7 +10,7 @@ private:
     int _waitTime;
     int _distanceFromStorage;
 public:
-    Receiver();
+    Receiver(std::string name = "UnnamedReceiver");
     ~Receiver();
 
     std::string getName() const;

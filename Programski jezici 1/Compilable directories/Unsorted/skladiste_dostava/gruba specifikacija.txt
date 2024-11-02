@@ -35,7 +35,7 @@ i modifikacije svakog atributa; npr. koristiti 'const' za getere jer znamo da ne
 		- trenutno vrijeme čekanja
 		- udaljenost od skladišta (nasumično generisan prirodnim brojem predstavljen broj kilometara između 100km i 400km)
 
-4. Klasa koja opisuje pošiljku:
+4. Klasa koja opisuje jednu pošiljku:
 	- pošiljke se sastoje od sljedećih atributa:
 		- identifikator (statično inkrementiran redni broj)
 		- masa [kg] (nasumično, 1kg - 20kg)
