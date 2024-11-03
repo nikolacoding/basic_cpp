@@ -17,17 +17,18 @@ void Simulation::Test(){
     }
 }
 
-void Simulation::Start(){
+void Simulation::Run(){
     Storage storage(-1000, 1000, 4);
     Import import(3, 50, 50);
 
+    // TODO: automatizovati ovo da se moze dinamicki zadati n dostavljaca
     Export exp1("Jovan");
     Export exp2("Zoran");
     Export exp3("Goran");
     Export exp4("Ivan");
     Export exp5("David");
 
-    std::vector<Export> exports;
+    std::vector<Export&> exports;
     exports.push_back(exp1);
     exports.push_back(exp2);
     exports.push_back(exp3);
@@ -36,9 +37,7 @@ void Simulation::Start(){
 
     Stats stats;
 
-    // wave logika ovdje pocinje
-    import.importNewPackages(storage);
-    // TODO: provjera vrhovnih elementova steka od strane svakog clana exports
+    Wave::Start(storage, import, exports, stats);
 }
 
 void Simulation::End(){

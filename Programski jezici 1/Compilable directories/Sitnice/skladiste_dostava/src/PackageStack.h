@@ -12,6 +12,7 @@ public:
     ~PackageStack();
 
     int getSize();
+    Package getTop();
     bool isEmpty();
     void push(const Package package);
     Package pop(bool& success);

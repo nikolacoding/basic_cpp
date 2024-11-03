@@ -16,7 +16,7 @@
 namespace Simulation{
     void Test();
     
-    void Start();
+    void Run();
     void End();
 };
 

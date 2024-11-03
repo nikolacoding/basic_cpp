@@ -19,6 +19,19 @@ int Export::getMaxCapacity() const {
     return this->_maxCapacity;
 }
 
+int Export::getCurrentLoad() const {
+    return this->_currentLoad;
+}
+
 int Export::getMaxSpeed() const {
     return this->_maxSpeed;
+}
+
+int Export::addToLoad(Package p){
+    this->loadedPackages.push_back(p);
+    this->_currentLoad += p.getMass();
+}
+
+int Export::removeFromLoad(Package p){
+
 }

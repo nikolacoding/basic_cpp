@@ -12,6 +12,10 @@ int PackageStack::getSize(){
     return this->stackVector.size();
 }
 
+Package PackageStack::getTop(){
+    return this->stackVector.back();
+}
+
 bool PackageStack::isEmpty(){
     return this->stackVector.empty();
 }
