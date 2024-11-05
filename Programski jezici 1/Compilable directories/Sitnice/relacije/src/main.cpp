@@ -2,6 +2,8 @@
 #include <cstdio>
 #include "Vector2D.h"
 #include "Vector2DArray.h"
+
+// random change to test upstream pushing
 #include "Vector2DStack.h"
 
 void dbl(Vector2D& vector){
@@ -26,7 +28,7 @@ int main(){
     if (success)
         lastRemoved.print();
     else    
-        printf("Neuspjesno dohvatanje.\n");
+        std::printf("Neuspjesno dohvatanje.\n");
 
     st.push(v1);
     st.push(v2);
