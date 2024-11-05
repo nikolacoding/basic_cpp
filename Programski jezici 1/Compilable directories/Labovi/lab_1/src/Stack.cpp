@@ -51,6 +51,8 @@ bool Stack::pop(Point& poppedPoint){
 Point& Stack::top(){
     if (!this->isEmpty())
         return this->data[this->topIndex];
+    
+    return Point::invalidPoint;
 }
 
 bool Stack::isEmpty(){

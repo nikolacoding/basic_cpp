@@ -1,11 +1,12 @@
 #include "Point.h"
 #include "Stack.h"
 #include <cstdio>
+#include <iostream>
 
 int main(){
     // stek je logicki prazan kad je topIndex = -1 tj. kada je size() + 1 == 0
     // stek je logicki pun kad je topIndex + 1 = capacity tj. size() == capacity
-  
+
     Stack s(4); // instanciramo stek sa inicijalnim kapacitetom 4
     Point lastPopped;
 
@@ -54,6 +55,5 @@ int main(){
     if (!s.pop(lastPopped)) printf("prazno\n"); // prazno
 
     // moguce da postoji problem sa radom sa stekom kapaciteta 0 ali nemam vremena da to popravljam
-
     return 0;
 }
