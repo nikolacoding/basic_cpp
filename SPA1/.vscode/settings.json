@@ -65,7 +65,7 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "optional": "cpp",
-        "queue": "cpp",
+        "PVQueue": "cpp",
         "ranges": "cpp",
         "span": "cpp"
     }

@@ -2,6 +2,19 @@
 #define SIMULATION_H
 
 #include <iostream>
+#include "Utility.h"
+
+// Putnicki dio simulacije
+#include "Passenger.h"      
+#include "PassengerVehicle.h"        
+#include "PVLinkedList.h"
+#include "PVQueue.h"  
+
+// Teretni dio simulacije
+#include "Cargo.h"
+#include "CargoVehicle.h"
+#include "CVLinkedList.h"
+#include "CVQueue.h"   
 
 namespace Simulation{
     enum Types{
@@ -9,8 +22,10 @@ namespace Simulation{
         TERETNO = 2
     };
 
-    void Run(int numVehicles, int type, short priorityAgeThreshold);
-    void End();
+    static void addVehiclesToPVQueue(PVQueue&, const int, const short);
+    static void clearPVQueue(PVQueue& PVQueue);
+
+    void Run(const int numVehicles, const int type, const short priorityAgeThreshold);
 }
 
 #endif
