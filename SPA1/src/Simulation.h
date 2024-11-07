@@ -9,7 +9,7 @@ namespace Simulation{
         TERETNO = 2
     };
 
-    void Run(int numVehicles, int type);
+    void Run(int numVehicles, int type, short priorityAgeThreshold);
     void End();
 }
 

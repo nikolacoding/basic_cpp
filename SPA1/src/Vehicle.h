@@ -11,7 +11,10 @@ private:
 
 public:
     Vehicle(int numPassengers = 1);
+    bool hasChild(short threshold);
     std::vector<Passenger>& getPassengersRef();
+    static Vehicle invalidVehicle;
+    bool isInvalid();
 };
 
 #endif

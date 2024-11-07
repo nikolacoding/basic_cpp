@@ -13,7 +13,13 @@ void Queue::enqueuePriority(const Vehicle& vehicle){
 }
 
 Vehicle Queue::dequeue(bool& success){
-    Vehicle ret = this->m_list->getAtFront()->m_vehicleData;
+    ListNode* toDequeue = this->m_list->getAtFront();
+    if (!toDequeue){
+        success = false;
+        return Vehicle::invalidVehicle;
+    }
+    Vehicle ret = toDequeue->m_vehicleData;
     this->m_list->removeFront();
+    success = true;
     return ret;
 }

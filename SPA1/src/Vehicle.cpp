@@ -1,5 +1,7 @@
 #include "Vehicle.h"
 
+Vehicle Vehicle::invalidVehicle = Vehicle(0);
+
 static Passenger generatePassenger(int minAge = 0){
     int age = Utility::RandomInt(minAge, 70);
     return Passenger(age);
@@ -12,6 +14,20 @@ Vehicle::Vehicle(const int numPassengers){
     }
 }
 
+bool Vehicle::hasChild(short threshold){
+    std::vector<Passenger>& passengers = this->getPassengersRef();
+
+    for (Passenger p : passengers){
+        if (p.getAge() <= threshold)
+            return true;
+    }
+    return false;
+}
+
 std::vector<Passenger>& Vehicle::getPassengersRef(){
     return this->m_passengerVector;
+}
+
+bool Vehicle::isInvalid(){
+    return this->getPassengersRef().size() == 0;
 }
