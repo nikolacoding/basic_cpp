@@ -4,11 +4,16 @@
 #include "../cargo/CargoVehicle.h"
 
 class CVListNode{
-public:
+private:
     CargoVehicle m_cargoVehicleData;
+
+public:
     CVListNode* m_next;
 
-    CVListNode(const CargoVehicle& data);
+    CVListNode() = delete;
+    explicit CVListNode(const CargoVehicle& data);
+    
+    CargoVehicle& getCargoVehicleData();
 };
 
 #endif

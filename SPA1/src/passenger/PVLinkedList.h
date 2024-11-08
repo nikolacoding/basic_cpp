@@ -12,12 +12,12 @@ public:
     PVLinkedList();
 
     bool isEmpty() const;
-    void addToFront(const PassengerVehicle& vehicle);
-    void addToBack(const PassengerVehicle& vehicle);
 
+    void addToFront(const PassengerVehicle& vehicle);
+    PVListNode* getAtFront() const;
     void removeFront();
 
-    PVListNode* getAtFront() const;
+    void addToBack(const PassengerVehicle& vehicle);
     PVListNode* getAtBack() const;
 };
 

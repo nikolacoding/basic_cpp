@@ -1,7 +1,7 @@
 #ifndef NAMESPACES_H
 #define NAMESPACE_H
 
-#include <cstdlib>
+#include <iostream>
 #include <ctime>
 #include <string>
 #include <vector>
@@ -12,7 +12,7 @@ namespace Utility{
     void RandomizeSeed();
     int RandomInt(int low, int high);
 
-    std::vector<std::string> randomUnique(std::vector<std::string> v, int n);
+    std::vector<std::string> RandomUnique(std::vector<std::string> v, int n);
 }
 
 #endif

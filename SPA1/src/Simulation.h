@@ -10,7 +10,10 @@
 #include "passenger/Passenger.h"      
 #include "passenger/PassengerVehicle.h"        
 #include "passenger/PVLinkedList.h"
-#include "passenger/PVQueue.h"  
+#include "passenger/PVQueue.h"
+#include "passenger/PassengerListNode.h"
+#include "passenger/PassengerLinkedList.h"
+#include "passenger/PassengerQueue.h"
 
 // Teretni dio simulacije
 #include "cargo/Cargo.h"
@@ -19,18 +22,23 @@
 #include "cargo/CVQueue.h"   
 
 namespace Simulation{
+
     // passenger vehicle
     void RunPV(const int numVehicles, const short priorityAgeThreshold);
-    static void addVehiclesToPVQueue(PVQueue&, const int, const short);
+
+    static void addVehiclesToPVQueue(PVQueue&, const int numVehicles, 
+    const short priorityAgeThreshold);
+
     static void clearPVQueue(PVQueue& queue);
 
-    // cargo vehicle
-    void RunCV(const int numVehicles, const int numCargoTypes);
-    static bool addVehiclesToCVQueue(CVQueue& queue, const int, const int);
-    static void clearCVQueue(CVQueue& queue);
 
-    // addVehiclesToCVQueue vraca bool kao mjeru uspjeha otvaranja datoteke
-    // da znamo da li ostatak programa moze da nastavi normalno
+    // cargo vehicle
+    void RunCV(const int numVehicles, const int numCargoTypes, const std::string filename);
+
+    static bool addVehiclesToCVQueue(CVQueue&, const int numVehicles, 
+    const int numCargoType, const std::string);
+
+    static void clearCVQueue(CVQueue& queue);
 }
 
 #endif

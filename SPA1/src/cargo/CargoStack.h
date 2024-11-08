@@ -16,6 +16,7 @@ public:
     bool isFull() const;
     bool isEmpty() const;
     int getSize() const;
+
     void displayAll() const;
 
     void push(const Cargo& cargo);

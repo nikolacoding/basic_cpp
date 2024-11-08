@@ -14,8 +14,6 @@ public:
     Passenger(short age = 20);
     short getAge() const;
     int getId() const;
-    
-    void debugLog();
 };
 
 #endif

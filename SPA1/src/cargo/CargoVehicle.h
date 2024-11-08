@@ -13,7 +13,7 @@ private:
 public:
     CargoStack m_cargoStack;
     CargoVehicle();
-    CargoVehicle(std::vector<Cargo>& cargo);
+    CargoVehicle(const std::vector<Cargo>& cargo);
 
     int getId() const;
     void logCargo() const;

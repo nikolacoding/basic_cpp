@@ -1,9 +1,7 @@
 #include "../cargo/Cargo.h"
 
-Cargo::Cargo(std::string name) : m_name(name) {
-
-}
+Cargo::Cargo(std::string name) : m_name(name) { }
 
 std::string Cargo::getName() const {
-    return m_name;
+    return this->m_name;
 }

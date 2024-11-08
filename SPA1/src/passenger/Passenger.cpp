@@ -13,7 +13,3 @@ short Passenger::getAge() const {
 int Passenger::getId() const {
     return this->m_id;
 }
-
-void Passenger::debugLog(){
-    std::cout << "Putnik " << this->getId() << ": " << this->getAge() << " godina." << std::endl;
-}

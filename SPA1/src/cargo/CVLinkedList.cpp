@@ -52,9 +52,9 @@ CVListNode* CVLinkedList::getAtBack() const {
 
 void CVLinkedList::displayAll() const {
     CVListNode* current = m_head;
-    std::cout << "Trenutni poredak u redu:\n";
+    std::printf("\n\n>>> Trenutni poredak u redu:\n");
     while (current){
-        CargoVehicle& currentVehicle = current->m_cargoVehicleData;
+        CargoVehicle& currentVehicle = current->getCargoVehicleData();
 
         std::printf("Vozilo [ID: %d]\n", currentVehicle.getId());
         currentVehicle.logCargo();

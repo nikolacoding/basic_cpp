@@ -18,7 +18,7 @@ bool CVQueue::dequeue(CargoVehicle& vehicle){
     if (!toDequeue){
         return false;
     }
-    vehicle = toDequeue->m_cargoVehicleData;
+    vehicle = toDequeue->getCargoVehicleData();
     this->m_list->removeFront();
     return true;
 }

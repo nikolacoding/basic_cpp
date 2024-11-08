@@ -1,9 +1,7 @@
 #include "../cargo/CargoStack.h"
 
 CargoStack::CargoStack() : 
-m_topOfStack(-1), m_capacity(2), m_cargoArray(new Cargo[2]){
-
-}
+m_topOfStack(-1), m_capacity(2), m_cargoArray(new Cargo[2]){ }
 
 void CargoStack::realloc(int newCapacity){
     Cargo* newArray = new Cargo[newCapacity];

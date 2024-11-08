@@ -7,13 +7,18 @@
 
 class PassengerVehicle{
 private:
+    static int m_numInstances;
+    int m_id;
     std::vector<Passenger> m_passengerVector;
 
 public:
     PassengerVehicle(int numPassengers = 0);
-    bool hasChild(const short threshold);
-    std::vector<Passenger>& getPassengersRef();
 
+    int getId() const;
+    std::vector<Passenger>& getPassengersRef();
+    bool hasChild(const short threshold);
+
+    void displayAllPassengers() const;
 };
 
 #endif
