@@ -2,6 +2,8 @@
 #define SIMULATION_H
 
 #include <iostream>
+#include <cstdio>
+#include <fstream>
 #include "shared/Utility.h"
 
 // Putnicki dio simulacije
@@ -17,18 +19,18 @@
 #include "cargo/CVQueue.h"   
 
 namespace Simulation{
-    enum Types{
-        PUTNICKO = 1,
-        TERETNO = 2
-    };
-
+    // passenger vehicle
+    void RunPV(const int numVehicles, const short priorityAgeThreshold);
     static void addVehiclesToPVQueue(PVQueue&, const int, const short);
     static void clearPVQueue(PVQueue& queue);
 
-    static void addVehiclesToCVQueue(CVQueue& queue);
+    // cargo vehicle
+    void RunCV(const int numVehicles, const int numCargoTypes);
+    static bool addVehiclesToCVQueue(CVQueue& queue, const int, const int);
     static void clearCVQueue(CVQueue& queue);
 
-    void Run(const int numVehicles, const int type, const short priorityAgeThreshold);
+    // addVehiclesToCVQueue vraca bool kao mjeru uspjeha otvaranja datoteke
+    // da znamo da li ostatak programa moze da nastavi normalno
 }
 
 #endif

@@ -49,3 +49,17 @@ CVListNode* CVLinkedList::getAtBack() const {
         current = current->m_next;
     return current;
 }
+
+void CVLinkedList::displayAll() const {
+    CVListNode* current = m_head;
+    std::cout << "Trenutni poredak u redu:\n";
+    while (current){
+        CargoVehicle& currentVehicle = current->m_cargoVehicleData;
+
+        std::printf("Vozilo [ID: %d]\n", currentVehicle.getId());
+        currentVehicle.logCargo();
+        std::printf("\n");
+
+        current = current->m_next;
+    }
+}

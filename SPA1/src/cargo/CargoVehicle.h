@@ -8,10 +8,15 @@
 
 class CargoVehicle{
 private:
-    CargoStack m_cargoStack;
-
+    static int m_numInstances;
+    int m_id;
 public:
-    CargoVehicle(int numCargo = 3);
+    CargoStack m_cargoStack;
+    CargoVehicle();
+    CargoVehicle(std::vector<Cargo>& cargo);
+
+    int getId() const;
+    void logCargo() const;
 };
 
 #endif

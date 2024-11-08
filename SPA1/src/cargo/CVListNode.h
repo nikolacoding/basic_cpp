@@ -5,7 +5,7 @@
 
 class CVListNode{
 public:
-    CargoVehicle m_passengerVehicleData;
+    CargoVehicle m_cargoVehicleData;
     CVListNode* m_next;
 
     CVListNode(const CargoVehicle& data);

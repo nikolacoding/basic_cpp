@@ -12,8 +12,8 @@ public:
     ~CVQueue();
 
     void enqueue(const CargoVehicle& vehicle);
-    void enqueuePriority(const CargoVehicle& vehicle);
     bool dequeue(CargoVehicle& vehicle);
+    void displayAll() const;
 };
 
 #endif

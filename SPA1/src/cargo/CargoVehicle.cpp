@@ -1,5 +1,22 @@
 #include "../cargo/CargoVehicle.h"
 
-CargoVehicle::CargoVehicle(const int numCargo){
+int CargoVehicle::m_numInstances = 1;
 
+CargoVehicle::CargoVehicle(){
+
+}
+
+CargoVehicle::CargoVehicle(std::vector<Cargo>& cargo) : m_id(m_numInstances){
+    m_numInstances++;
+    for (Cargo c : cargo){
+        m_cargoStack.push(c);
+    }
+}
+
+int CargoVehicle::getId() const {
+    return this->m_id;
+}
+
+void CargoVehicle::logCargo() const {
+    this->m_cargoStack.displayAll();
 }

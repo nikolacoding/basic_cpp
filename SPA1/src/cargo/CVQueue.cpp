@@ -13,16 +13,16 @@ void CVQueue::enqueue(const CargoVehicle& vehicle){
     this->m_list->addToBack(vehicle);
 }
 
-void CVQueue::enqueuePriority(const CargoVehicle& vehicle){
-    this->m_list->addToFront(vehicle);
-}
-
 bool CVQueue::dequeue(CargoVehicle& vehicle){
     CVListNode* toDequeue = this->m_list->getAtFront();
     if (!toDequeue){
         return false;
     }
-    vehicle = toDequeue->m_passengerVehicleData;
+    vehicle = toDequeue->m_cargoVehicleData;
     this->m_list->removeFront();
     return true;
+}
+
+void CVQueue::displayAll() const {
+    this->m_list->displayAll();
 }
