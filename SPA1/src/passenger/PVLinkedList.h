@@ -1,8 +1,8 @@
 #ifndef PVLINKEDLIST_H
 #define PVLINKEDLIST_H
 
-#include "PVListNode.h"
-#include "PassengerVehicle.h"
+#include "../passenger/PVListNode.h"
+#include "../passenger/PassengerVehicle.h"
 
 class PVLinkedList{
 private:

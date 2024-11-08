@@ -1,7 +1,7 @@
 #ifndef CVLISTNODE_H
 #define CVLISTNODE_H
 
-#include "CargoVehicle.h"
+#include "../cargo/CargoVehicle.h"
 
 class CVListNode{
 public:

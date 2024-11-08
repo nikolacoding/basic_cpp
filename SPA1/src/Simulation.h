@@ -2,19 +2,19 @@
 #define SIMULATION_H
 
 #include <iostream>
-#include "Utility.h"
+#include "shared/Utility.h"
 
 // Putnicki dio simulacije
-#include "Passenger.h"      
-#include "PassengerVehicle.h"        
-#include "PVLinkedList.h"
-#include "PVQueue.h"  
+#include "passenger/Passenger.h"      
+#include "passenger/PassengerVehicle.h"        
+#include "passenger/PVLinkedList.h"
+#include "passenger/PVQueue.h"  
 
 // Teretni dio simulacije
-#include "Cargo.h"
-#include "CargoVehicle.h"
-#include "CVLinkedList.h"
-#include "CVQueue.h"   
+#include "cargo/Cargo.h"
+#include "cargo/CargoVehicle.h"
+#include "cargo/CVLinkedList.h"
+#include "cargo/CVQueue.h"   
 
 namespace Simulation{
     enum Types{
@@ -23,7 +23,10 @@ namespace Simulation{
     };
 
     static void addVehiclesToPVQueue(PVQueue&, const int, const short);
-    static void clearPVQueue(PVQueue& PVQueue);
+    static void clearPVQueue(PVQueue& queue);
+
+    static void addVehiclesToCVQueue(CVQueue& queue);
+    static void clearCVQueue(CVQueue& queue);
 
     void Run(const int numVehicles, const int type, const short priorityAgeThreshold);
 }

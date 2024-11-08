@@ -1,13 +1,14 @@
 #ifndef CARGOVEHICLE_H
 #define CARGOVEHICLE_H
 
-#include "Cargo.h"
-#include "Utility.h"
+#include "../cargo/Cargo.h"
+#include "../cargo/CargoStack.h"
+#include "../shared/Utility.h"
 #include <vector>
 
 class CargoVehicle{
 private:
-    // std::vector<Cargo> m_passengerVector;
+    CargoStack m_cargoStack;
 
 public:
     CargoVehicle(int numCargo = 3);

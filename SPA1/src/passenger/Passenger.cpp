@@ -1,4 +1,4 @@
-#include "Passenger.h"
+#include "../passenger/Passenger.h"
 
 int Passenger::m_totalInstances = 1;
 

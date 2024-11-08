@@ -1,7 +1,7 @@
 #ifndef PVListNode_H
 #define PVListNode_H
 
-#include "PassengerVehicle.h"
+#include "../passenger/PassengerVehicle.h"
 
 class PVListNode{
 public:

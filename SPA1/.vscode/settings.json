@@ -67,6 +67,7 @@
         "optional": "cpp",
         "PVQueue": "cpp",
         "ranges": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "queue": "cpp"
     }
 }

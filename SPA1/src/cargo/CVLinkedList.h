@@ -1,8 +1,8 @@
 #ifndef CVLINKEDLIST_H
 #define CVLINKEDLIST_H
 
-#include "CVListNode.h"
-#include "CargoVehicle.h"
+#include "../cargo/CVListNode.h"
+#include "../cargo/CargoVehicle.h"
 
 class CVLinkedList{
 private:

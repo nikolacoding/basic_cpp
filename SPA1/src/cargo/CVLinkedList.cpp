@@ -1,4 +1,4 @@
-#include "CVLinkedList.h"
+#include "../cargo/CVLinkedList.h"
 
 CVLinkedList::CVLinkedList(){
     this->m_head = nullptr;

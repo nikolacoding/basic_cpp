@@ -1,4 +1,4 @@
-#include "Cargo.h"
+#include "../cargo/Cargo.h"
 
 Cargo::Cargo(std::string name) : m_name(name) {
     

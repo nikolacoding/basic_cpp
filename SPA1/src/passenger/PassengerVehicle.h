@@ -1,8 +1,8 @@
 #ifndef PASSENGERVEHICLE_H
 #define PASSENGERVEHICLE_H
 
-#include "Passenger.h"
-#include "Utility.h"
+#include "../shared/Utility.h"
+#include "../passenger/Passenger.h"
 #include <vector>
 
 class PassengerVehicle{

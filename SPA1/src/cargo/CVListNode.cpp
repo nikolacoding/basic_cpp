@@ -1,4 +1,4 @@
-#include "CVListNode.h"
+#include "../cargo/CVListNode.h"
 
 CVListNode::CVListNode(const CargoVehicle& data){
     this->m_next = nullptr;

@@ -1,4 +1,4 @@
-#include "CVQueue.h"
+#include "../cargo/CVQueue.h"
 
 CVQueue::CVQueue(){
     CVLinkedList* list = new CVLinkedList;

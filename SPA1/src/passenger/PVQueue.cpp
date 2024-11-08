@@ -1,4 +1,4 @@
-#include "PVQueue.h"
+#include "../passenger/PVQueue.h"
 
 PVQueue::PVQueue(){
     PVLinkedList* list = new PVLinkedList;

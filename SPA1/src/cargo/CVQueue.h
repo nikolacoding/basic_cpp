@@ -1,7 +1,7 @@
-#ifndef PVQUEUE_H
-#define PVQUEUE_H
+#ifndef CVQUEUE_H
+#define CVQUEUE_H
 
-#include "CVLinkedList.h"
+#include "../cargo/CVLinkedList.h"
 
 class CVQueue{
 private:

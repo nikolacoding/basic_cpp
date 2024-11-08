@@ -1,4 +1,4 @@
-#include "PassengerVehicle.h"
+#include "../passenger/PassengerVehicle.h"
 
 static Passenger generatePassenger(int minAge = 1){
     int age = Utility::RandomInt(minAge, 70);

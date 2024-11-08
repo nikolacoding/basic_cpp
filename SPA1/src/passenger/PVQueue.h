@@ -1,7 +1,7 @@
 #ifndef PVQUEUE_H
 #define PVQUEUE_H
 
-#include "PVLinkedList.h"
+#include "../passenger/PVLinkedList.h"
 
 class PVQueue{
 private:

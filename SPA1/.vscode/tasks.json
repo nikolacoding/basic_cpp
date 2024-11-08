@@ -8,6 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\src\\*.cpp",
+                "${workspaceFolder}\\src\\passenger\\*.cpp",
+                "${workspaceFolder}\\src\\cargo\\*.cpp",
+                "${workspaceFolder}\\src\\shared\\*.cpp",
                 "-o",
                 "${workspaceFolder}\\bin\\${fileBasenameNoExtension}.exe"
             ],
