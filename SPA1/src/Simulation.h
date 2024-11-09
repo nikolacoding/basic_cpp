@@ -9,6 +9,7 @@
 // Putnicki dio simulacije
 #include "passenger/Passenger.h"      
 #include "passenger/PassengerVehicle.h"        
+#include "passenger/PVListNode.h"
 #include "passenger/PVLinkedList.h"
 #include "passenger/PVQueue.h"
 #include "passenger/PassengerListNode.h"
@@ -17,9 +18,11 @@
 
 // Teretni dio simulacije
 #include "cargo/Cargo.h"
+#include "cargo/CargoStack.h"
 #include "cargo/CargoVehicle.h"
+#include "cargo/CVListNode.h"
 #include "cargo/CVLinkedList.h"
-#include "cargo/CVQueue.h"   
+#include "cargo/CVQueue.h"
 
 namespace Simulation{
 
@@ -31,7 +34,6 @@ namespace Simulation{
 
     static void clearPVQueue(PVQueue& queue);
 
-
     // cargo vehicle
     void RunCV(const int numVehicles, const int numCargoTypes, const std::string filename);
 
@@ -42,3 +44,6 @@ namespace Simulation{
 }
 
 #endif
+
+// Nikola Markovic (2024)
+// ETFBL, Strukture podataka i algoritmi, 2024/25.

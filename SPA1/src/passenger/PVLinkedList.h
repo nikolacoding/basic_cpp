@@ -6,7 +6,7 @@
 
 class PVLinkedList{
 private:
-    PVListNode *m_head;
+    PVListNode* m_head;
 
 public:
     PVLinkedList();

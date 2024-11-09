@@ -36,3 +36,6 @@ int main(void){
             break;
     }
 }
+
+// Nikola Markovic (2024)
+// ETFBL, Strukture podataka i algoritmi, 2024/25.
