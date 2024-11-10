@@ -68,6 +68,8 @@
         "PVQueue": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "string_view": "cpp",
+        "numbers": "cpp"
     }
 }

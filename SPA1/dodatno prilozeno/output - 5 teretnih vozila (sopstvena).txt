@@ -1,0 +1,118 @@
+Pokretanje simulacije rezimom za teretna vozila, 5 vozila, izvor robe: 'sopstvena.txt'
+
+===========================================================================================
+PS X:\Projekti\C++\SPA1>  & 'c:\Users\Nikola\.vscode\extensions\ms-vscode.cpptools-1.22.10-win32-x64\debugAdapters\bin\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-ddxzuvbh.pjd' '--stdout=Microsoft-MIEngine-Out-arkd4wft.50r' '--stderr=Microsoft-MIEngine-Error-cuig3hvl.fe4' '--pid=Microsoft-MIEngine-Pid-jlkxdkib.l10' '--dbgExe=C:\msys64\ucrt64\bin\gdb.exe' '--interpreter=mi' 
+Unesi tip simulacije (1: putnicka vozila, 2: teretna vozila): 2
+Unesi broj vozila za simulaciju: 5
+Naziv datoteke s robom: sopstvena.txt
+Pokrecemo simulaciju sa 5 teretnih vozila.
+Trazimo robu u datoteci na putanji '../cargo_files/sopstvena.txt'...
+Datoteka 'sopstvena.txt' uspjesno pronadjena i otvorena.
+
+U red ulazi teretno vozilo [ID: 1]
+Roba:
+   1: mineralna voda
+   2: maslinovo ulje
+   3: deterdzent za sudove
+
+U red ulazi teretno vozilo [ID: 2]
+Roba:
+   1: crveni luk
+   2: sveze voce
+   3: pasta za zube
+
+U red ulazi teretno vozilo [ID: 3]
+Roba:
+   1: pilece belo meso
+   2: pileca supa
+   3: deterdzent za sudove
+
+U red ulazi teretno vozilo [ID: 4]
+Roba:
+   1: sveze voce
+   2: pileca supa
+   3: paradajz sos
+
+U red ulazi teretno vozilo [ID: 5]
+Roba:
+   1: maslac od kikirikija
+   2: domaci med
+   3: crveni luk
+
+
+>>> Trenutni poredak u redu:
+Vozilo [ID: 1]
+   1: mineralna voda
+   2: maslinovo ulje
+   3: deterdzent za sudove
+
+Vozilo [ID: 2]
+   1: crveni luk
+   2: sveze voce
+   3: pasta za zube
+
+Vozilo [ID: 3]
+   1: pilece belo meso
+   2: pileca supa
+   3: deterdzent za sudove
+
+Vozilo [ID: 4]
+   1: sveze voce
+   2: pileca supa
+   3: paradajz sos
+
+Vozilo [ID: 5]
+   1: maslac od kikirikija
+   2: domaci med
+   3: crveni luk
+
+> Pocinje proces pregleda robe za vozilo [ID: 1]
+Iz prikolice istovaramo deterdzent za sudove i stavljamo na sto.
+Iz prikolice istovaramo maslinovo ulje i stavljamo na sto.
+Iz prikolice istovaramo mineralna voda i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 1]
+Vracamo mineralna voda sa stola nazad u prikolicu.
+Vracamo maslinovo ulje sa stola nazad u prikolicu.
+Vracamo deterdzent za sudove sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 1] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 2]
+Iz prikolice istovaramo pasta za zube i stavljamo na sto.
+Iz prikolice istovaramo sveze voce i stavljamo na sto.
+Iz prikolice istovaramo crveni luk i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 2]
+Vracamo crveni luk sa stola nazad u prikolicu.
+Vracamo sveze voce sa stola nazad u prikolicu.
+Vracamo pasta za zube sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 2] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 3]
+Iz prikolice istovaramo deterdzent za sudove i stavljamo na sto.
+Iz prikolice istovaramo pileca supa i stavljamo na sto.
+Iz prikolice istovaramo pilece belo meso i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 3]
+Vracamo pilece belo meso sa stola nazad u prikolicu.
+Vracamo pileca supa sa stola nazad u prikolicu.
+Vracamo deterdzent za sudove sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 3] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 4]
+Iz prikolice istovaramo paradajz sos i stavljamo na sto.
+Iz prikolice istovaramo pileca supa i stavljamo na sto.
+Iz prikolice istovaramo sveze voce i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 4]
+Vracamo sveze voce sa stola nazad u prikolicu.
+Vracamo pileca supa sa stola nazad u prikolicu.
+Vracamo paradajz sos sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 4] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 5]
+Iz prikolice istovaramo crveni luk i stavljamo na sto.
+Iz prikolice istovaramo domaci med i stavljamo na sto.
+Iz prikolice istovaramo maslac od kikirikija i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 5]
+Vracamo maslac od kikirikija sa stola nazad u prikolicu.
+Vracamo domaci med sa stola nazad u prikolicu.
+Vracamo crveni luk sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 5] je pusteno preko granice.
+===========================================================================================

@@ -1,0 +1,118 @@
+Pokretanje simulacije rezimom za teretna vozila, 5 vozila, izvor robe: 'roba.txt'
+
+===========================================================================================
+PS X:\Projekti\C++\SPA1>  & 'c:\Users\Nikola\.vscode\extensions\ms-vscode.cpptools-1.22.10-win32-x64\debugAdapters\bin\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-b1mrwsuf.hbq' '--stdout=Microsoft-MIEngine-Out-mobzgzej.pln' '--stderr=Microsoft-MIEngine-Error-y4sq4ttv.2dw' '--pid=Microsoft-MIEngine-Pid-lczp2kok.vus' '--dbgExe=C:\msys64\ucrt64\bin\gdb.exe' '--interpreter=mi' 
+Unesi tip simulacije (1: putnicka vozila, 2: teretna vozila): 2
+Unesi broj vozila za simulaciju: 5
+Naziv datoteke s robom: roba.txt
+Pokrecemo simulaciju sa 5 teretnih vozila.
+Trazimo robu u datoteci na putanji '../cargo_files/roba.txt'...
+Datoteka 'roba.txt' uspjesno pronadjena i otvorena.
+
+U red ulazi teretno vozilo [ID: 1]
+Roba:
+   1: satori
+   2: stolovi
+   3: posudje
+
+U red ulazi teretno vozilo [ID: 2]
+Roba:
+   1: stolovi
+   2: banane
+   3: brasno
+
+U red ulazi teretno vozilo [ID: 3]
+Roba:
+   1: puzle
+   2: stolovi
+   3: satori
+
+U red ulazi teretno vozilo [ID: 4]
+Roba:
+   1: cipele
+   2: banane
+   3: sokovi
+
+U red ulazi teretno vozilo [ID: 5]
+Roba:
+   1: posudje
+   2: deterdzenti
+   3: jakne
+
+
+>>> Trenutni poredak u redu:
+Vozilo [ID: 1]
+   1: satori
+   2: stolovi
+   3: posudje
+
+Vozilo [ID: 2]
+   1: stolovi
+   2: banane
+   3: brasno
+
+Vozilo [ID: 3]
+   1: puzle
+   2: stolovi
+   3: satori
+
+Vozilo [ID: 4]
+   1: cipele
+   2: banane
+   3: sokovi
+
+Vozilo [ID: 5]
+   1: posudje
+   2: deterdzenti
+   3: jakne
+
+> Pocinje proces pregleda robe za vozilo [ID: 1]
+Iz prikolice istovaramo posudje i stavljamo na sto.
+Iz prikolice istovaramo stolovi i stavljamo na sto.
+Iz prikolice istovaramo satori i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 1]
+Vracamo satori sa stola nazad u prikolicu.
+Vracamo stolovi sa stola nazad u prikolicu.
+Vracamo posudje sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 1] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 2]
+Iz prikolice istovaramo brasno i stavljamo na sto.
+Iz prikolice istovaramo banane i stavljamo na sto.
+Iz prikolice istovaramo stolovi i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 2]
+Vracamo stolovi sa stola nazad u prikolicu.
+Vracamo banane sa stola nazad u prikolicu.
+Vracamo brasno sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 2] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 3]
+Iz prikolice istovaramo satori i stavljamo na sto.
+Iz prikolice istovaramo stolovi i stavljamo na sto.
+Iz prikolice istovaramo puzle i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 3]
+Vracamo puzle sa stola nazad u prikolicu.
+Vracamo stolovi sa stola nazad u prikolicu.
+Vracamo satori sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 3] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 4]
+Iz prikolice istovaramo sokovi i stavljamo na sto.
+Iz prikolice istovaramo banane i stavljamo na sto.
+Iz prikolice istovaramo cipele i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 4]
+Vracamo cipele sa stola nazad u prikolicu.
+Vracamo banane sa stola nazad u prikolicu.
+Vracamo sokovi sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 4] je pusteno preko granice.
+
+> Pocinje proces pregleda robe za vozilo [ID: 5]
+Iz prikolice istovaramo jakne i stavljamo na sto.
+Iz prikolice istovaramo deterdzenti i stavljamo na sto.
+Iz prikolice istovaramo posudje i stavljamo na sto.
+> Uspjesno pregledanje robe za vozilo [ID: 5]
+Vracamo posudje sa stola nazad u prikolicu.
+Vracamo deterdzenti sa stola nazad u prikolicu.
+Vracamo jakne sa stola nazad u prikolicu.
+> Teretno vozilo [ID: 5] je pusteno preko granice.
+===========================================================================================

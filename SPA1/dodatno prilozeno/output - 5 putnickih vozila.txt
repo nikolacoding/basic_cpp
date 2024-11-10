@@ -1,0 +1,77 @@
+Pokretanje simulacije rezimom za putnicka vozila, 5 vozila
+
+===========================================================================================
+PS X:\Projekti\C++\SPA1>  & 'c:\Users\Nikola\.vscode\extensions\ms-vscode.cpptools-1.22.10-win32-x64\debugAdapters\bin\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-coruuuqy.eq0' '--stdout=Microsoft-MIEngine-Out-d4kie22f.t2q' '--stderr=Microsoft-MIEngine-Error-cfadv3ua.3gf' '--pid=Microsoft-MIEngine-Pid-b5xsoidk.jjx' '--dbgExe=C:\msys64\ucrt64\bin\gdb.exe' '--interpreter=mi' 
+Unesi tip simulacije (1: putnicka vozila, 2: teretna vozila): 1 
+Unesi broj vozila za simulaciju: 5
+Pokrecemo simulaciju sa 5 putnickih vozila.
+U red ulazi vozilo [ID: 1] sa 1 putnika.
+   Putnik [ID: 1] - 63 god.
+
+U red ulazi vozilo [ID: 2] sa 2 putnika.
+   Putnik [ID: 2] - 30 god.
+   Putnik [ID: 3] - 41 god.
+
+U red ulazi vozilo [ID: 3] sa 4 putnika.
+   Putnik [ID: 4] - 38 god.
+   Putnik [ID: 5] - 21 god.
+   Putnik [ID: 6] - 39 god.
+   Putnik [ID: 7] - 53 god.
+
+U red prioritetno ulazi vozilo [ID: 4] sa 5 putnika.
+   Putnik [ID: 8] - 41 god.
+   Putnik [ID: 9] - 48 god.
+   Putnik [ID: 10] - 25 god.
+   Putnik [ID: 11] - 62 god.
+   Putnik [ID: 12] - 6 god.
+
+U red ulazi vozilo [ID: 5] sa 3 putnika.
+   Putnik [ID: 13] - 69 god.
+   Putnik [ID: 14] - 46 god.
+   Putnik [ID: 15] - 28 god.
+
+> Novo vozilo na redu [ID: 4] sa 5 putnika.
+Putnik [ID: 8] (41 god) predaje pasos.
+Putnik [ID: 9] (48 god) predaje pasos.
+Putnik [ID: 10] (25 god) predaje pasos.
+Putnik [ID: 11] (62 god) predaje pasos.
+Putnik [ID: 12] (6 god) predaje pasos.
+Carinik pregleda i vraca pasos putniku [ID: 8]
+Carinik pregleda i vraca pasos putniku [ID: 9]
+Carinik pregleda i vraca pasos putniku [ID: 10]
+Carinik pregleda i vraca pasos putniku [ID: 11]
+Carinik pregleda i vraca pasos putniku [ID: 12]
+> Vozilo [ID: 4] se pusta preko granice.
+
+> Novo vozilo na redu [ID: 1] sa 1 putnika.
+Putnik [ID: 1] (63 god) predaje pasos.
+Carinik pregleda i vraca pasos putniku [ID: 1]
+> Vozilo [ID: 1] se pusta preko granice.
+
+> Novo vozilo na redu [ID: 2] sa 2 putnika.
+Putnik [ID: 2] (30 god) predaje pasos.
+Putnik [ID: 3] (41 god) predaje pasos.
+Carinik pregleda i vraca pasos putniku [ID: 2]
+Carinik pregleda i vraca pasos putniku [ID: 3]
+> Vozilo [ID: 2] se pusta preko granice.
+
+> Novo vozilo na redu [ID: 3] sa 4 putnika.
+Putnik [ID: 4] (38 god) predaje pasos.
+Putnik [ID: 5] (21 god) predaje pasos.
+Putnik [ID: 6] (39 god) predaje pasos.
+Putnik [ID: 7] (53 god) predaje pasos.
+Carinik pregleda i vraca pasos putniku [ID: 4]
+Carinik pregleda i vraca pasos putniku [ID: 5]
+Carinik pregleda i vraca pasos putniku [ID: 6]
+Carinik pregleda i vraca pasos putniku [ID: 7]
+> Vozilo [ID: 3] se pusta preko granice.
+
+> Novo vozilo na redu [ID: 5] sa 3 putnika.
+Putnik [ID: 13] (69 god) predaje pasos.
+Putnik [ID: 14] (46 god) predaje pasos.
+Putnik [ID: 15] (28 god) predaje pasos.
+Carinik pregleda i vraca pasos putniku [ID: 13]
+Carinik pregleda i vraca pasos putniku [ID: 14]
+Carinik pregleda i vraca pasos putniku [ID: 15]
+> Vozilo [ID: 5] se pusta preko granice.
+===========================================================================================
