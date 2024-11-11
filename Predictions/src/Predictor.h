@@ -8,7 +8,7 @@
 
 struct Predictor{
     std::string name;
-    std::vector<std::pair<Match, unsigned short>> prediction;
+    std::vector<std::pair<Match, unsigned short>> predictions;
 };
 
 #endif
