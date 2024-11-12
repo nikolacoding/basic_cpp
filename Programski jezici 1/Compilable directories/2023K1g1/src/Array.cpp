@@ -1,72 +1,78 @@
 #include "Array.hpp"
 
-void Array::realloc(const int newCapacity){
-    std::printf("Upsizing from %d to %d\n", this->m_capacity, newCapacity);
-    this->m_capacity = newCapacity;
-    Point* newArray = new Point[newCapacity];
-    for (int i = 0; i < this->m_capacity; i++){
-        newArray[i] = this->m_array[i];
+Array::Array(int initCapacity) :
+    m_capacity(initCapacity), m_size(0), m_array(new Vector2D[initCapacity]) {
+
+}
+
+Array::Array(const Array& other){
+    this->m_capacity = other.m_capacity;
+    this->m_size = other.m_size;
+
+    for (int i = 0; i < other.m_size; i++){
+        this->m_array[i] = other.m_array[i];
     }
+    // delete[] other.m_array;       [mozda?]
+}
+
+// Array::~Array(){
+//     delete[] this->m_array;
+// }
+
+void Array::append(const Vector2D& vector){
+    if (this->m_size == this->m_capacity)
+        this->realloc(this->m_capacity * 2);
+    
+    this->m_array[m_size++] = vector;
+}
+
+int Array::getSize() const {
+    return this->m_size;
+}
+
+Vector2D& Array::at(const int index, bool& success){
+    if (index >= this->m_size){
+        success = false;
+        return Vector2D::invalidVector;
+    }
+    
+    success = true;
+    return this->m_array[index];
+}
+
+const Vector2D& Array::at(const int index, bool& success) const {
+    if (index >= this->m_size){
+        success = false;
+        return Vector2D::invalidVector;
+    }
+    
+    success = true;
+    return this->m_array[index];
+}
+
+Array Array::transform(void (*dbl)(Vector2D& p)){
+    Array newArray(*this);
+    for (int i = 0; i < newArray.getSize(); i++){
+        bool success;
+        Vector2D& current = newArray.at(i, success);
+        if (!success) break;
+        (*dbl)(current);
+    }
+    return newArray;
+}
+
+void Array::displayAll(){
+    for (int i = 0; i < this->m_size; i++){
+        std::cout << this->m_array[i].getX() << ", " << this->m_array[i].getY() << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void Array::realloc(const int newCapacity){
+    Vector2D* newArray = new Vector2D[newCapacity];
+    for (int i = 0; i < this->m_capacity; i++)
+        newArray[i] = this->m_array[i];
+    
     delete[] this->m_array;
     this->m_array = newArray;
-}
-
-bool Array::isFull(){
-    return this->m_size == this->m_capacity;
-}
-
-Array::Array(int initCapacity) : 
-m_capacity(initCapacity), m_size(0), m_array(new Point[initCapacity]) { }
-
-// konstruktor (duboke) kopije
-Array::Array(const Array& other){
-    if (this != &other){
-        delete[] this->m_array;
-        this->m_capacity = other.m_capacity;
-        this->m_size = other.m_size;
-        this->m_array = new Point[this->m_capacity];
-
-        for (int i = 0; i < other.m_size; i++){
-            this->m_array[i] = other.m_array[i];
-        }
-    }
-}
-
-Array::~Array(){
-    delete[] this->m_array;
-}
-
-void Array::append(const Point& newPoint){
-    if (this->isFull())
-        realloc(this->m_capacity * 2);
-
-    this->m_array[this->m_size++] = newPoint;
-}
-
-bool Array::at(const int index, Point& element){
-    if (index >= this->m_size)
-        return false;
-    
-    element = this->m_array[index];
-    return true;
-}
-
-const bool Array::at(const int index, Point& element) const {
-    if (index >= this->m_size)
-        return false;
-    
-    element = this->m_array[index];
-    return true;
-}
-
-Array Array::filter(bool (*f)(const Point& p)){
-    Array newArray;
-    for (int i = 0; i < this->m_size; i++){
-        const Point& current = this->m_array[i];
-        if ((*f)(current)){
-            newArray.append(current);
-        }
-    }
-
-    return newArray;
 }

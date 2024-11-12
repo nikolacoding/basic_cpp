@@ -1,31 +1,34 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-#include "Point.hpp"
+#include "Vector2D.hpp"
 #include <iostream>
 
 class Array{
 private:
     int m_capacity;
     int m_size;
-    Point* m_array;
+    Vector2D* m_array;
 
 private:
     void realloc(const int newCapacity);
-    bool isFull();
-    Array& operator=(const Array&) = delete;
+    Array& operator=(const Array& other) = delete;
 
 public:
     Array(int initCapacity = 1);
     Array(const Array& other);
-    ~Array();
+    //~Array();
 
-    void append(const Point& newPoint);
+    int getSize() const;
 
-    bool at(const int index, Point& element);
-    const bool at(const int index, Point& element) const;
+    void append(const Vector2D& vector);
 
-    Array filter(bool (*f)(const Point& p));
+    Vector2D& at(const int index, bool& success);
+    const Vector2D& at(const int index, bool& success) const;
+
+    Array transform(void (*dbl)(Vector2D& p));
+
+    void displayAll();
 };
 
 #endif

@@ -1,31 +1,26 @@
 #include <iostream>
-
-#include "Point.hpp"
+#include "Vector2D.hpp"
 #include "Array.hpp"
 
-int main(){
-
-    auto prolaziKrozNulu = [](const Point& p) -> bool {
-        return !(p.getX() == 0 || p.getY() == 0);
+int main(void){
+    auto dbl = [](Vector2D& p) -> void {
+        p.setX(p.getX() * 2);
+        p.setY(p.getY() * 2);
     };
 
-    Point p1;
-    Point p2(3);
-    Point p3(4, 7);
-    Point p4 = p3 * 2;
+    Vector2D v1(2, 4);
+    Vector2D v2(10, 20);
+    Vector2D v3(12, 15);
 
     Array a;
 
-    a.append(p1);
-    a.append(p2);
-    a.append(p3);
-    a.append(p4);
+    a.append(v1);
+    a.append(v2);
+    a.append(v3);
 
-    Array a_f = a.filter(prolaziKrozNulu);
+    a.displayAll();
 
-    Point ret;
-    const bool success = a_f.at(1, ret);
+    Array b(a.transform(dbl));
 
-    if (success)
-        printf("Ret: %.1lf, %.1lf\n", ret.getX(), ret.getY());
+    b.displayAll();
 }
