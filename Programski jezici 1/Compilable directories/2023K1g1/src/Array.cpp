@@ -50,17 +50,6 @@ const Vector2D& Array::at(const int index, bool& success) const {
     return this->m_array[index];
 }
 
-Array Array::transform(void (*dbl)(Vector2D& p)){
-    Array newArray(*this);
-    for (int i = 0; i < newArray.getSize(); i++){
-        bool success;
-        Vector2D& current = newArray.at(i, success);
-        if (!success) break;
-        (*dbl)(current);
-    }
-    return newArray;
-}
-
 void Array::displayAll(){
     for (int i = 0; i < this->m_size; i++){
         std::cout << this->m_array[i].getX() << ", " << this->m_array[i].getY() << std::endl;

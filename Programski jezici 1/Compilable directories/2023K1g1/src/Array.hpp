@@ -26,8 +26,6 @@ public:
     Vector2D& at(const int index, bool& success);
     const Vector2D& at(const int index, bool& success) const;
 
-    Array transform(void (*dbl)(Vector2D& p));
-
     void displayAll();
 };
 
