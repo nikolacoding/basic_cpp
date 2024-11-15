@@ -1,37 +1,34 @@
 #include <iostream>
+
 #include "Vector2D.hpp"
 #include "Array.hpp"
 
-static Array transform(const Array& array, Vector2D (*f)(const Vector2D&)){
-    Array newArray;
-    for (int i = 0; i < array.getSize(); i++){
-        bool success;
-        const Vector2D& current = array.at(i, success);
-        newArray.append((*f)(current));
-    }
-    return newArray;
-}
-
 int main(void){
+    Array vectors;
+    Vector2D v1, v2(3), v3(4, 7);
+    Vector2D vk, vp;
 
-    Vector2D v1(2, 4);
-    Vector2D v2(10, 20);
-    Vector2D v3(12, 15);
+    vectors.append(v1);
+    vectors.append(v2);
+    vectors.append(v3);
 
-    Array a;
+    if (vectors.at(1, vk))
+        vk.display();
 
-    a.append(v1);
-    a.append(v2);
-    a.append(v3);
+    vp = v2 + v3;
+    v3 += Vector2D(10, 10);
 
-    a.displayAll();
+    vp.display();
+    v3.display();
 
-    Array b(transform(a, [](const Vector2D& vector){
-        Vector2D newVector;
-        newVector.setX(vector.getX() * 2);
-        newVector.setY(vector.getY() * 2);
-        return newVector;
+
+    Array vectors_tr(vectors.transform([](const Vector2D& vector){
+        return Vector2D(vector.getX() * 2, vector.getY() * 2);
     }));
 
-    b.displayAll();
+    std::cout << "All:" << std::endl;
+    vectors.displayAll();
+
+    std::cout << "All (transformed):" << std::endl;
+    vectors_tr.displayAll();
 }

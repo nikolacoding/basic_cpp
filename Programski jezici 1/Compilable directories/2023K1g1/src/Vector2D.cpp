@@ -1,7 +1,5 @@
 #include "Vector2D.hpp"
 
-Vector2D Vector2D::invalidVector = Vector2D(-999, -999);
-
 Vector2D::Vector2D(double x, double y) : m_x(x), m_y(y) {
 
 }
@@ -14,17 +12,16 @@ double Vector2D::getY() const {
     return this->m_y;
 }
 
-void Vector2D::setX(double val){
-    this->m_x = val;
+void Vector2D::display() const {
+    std::printf("> (%.1lf, %.1lf)\n", this->m_x, this->m_y);
 }
 
-void Vector2D::setY(double val){
-    this->m_y = val;
+Vector2D Vector2D::operator+(const Vector2D& other) const {
+    Vector2D newVector(this->getX() + other.getX(), this->getY() + other.getY());
+    return newVector;
 }
 
-Vector2D Vector2D::operator+(const Vector2D& other){
-    double x = this->getX() + other.getX();
-    double y = this->getY() + other.getY();
-
-    return Vector2D(x, y);
+void Vector2D::operator+=(const Vector2D& other){
+    this->m_x = this->m_x + other.m_x;
+    this->m_y = this->m_y + other.m_y;
 }

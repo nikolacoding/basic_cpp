@@ -2,7 +2,6 @@
 #define ARRAY_H
 
 #include "Vector2D.hpp"
-#include <iostream>
 
 class Array{
 private:
@@ -12,21 +11,21 @@ private:
 
 private:
     void realloc(const int newCapacity);
+    inline bool isFull();
     Array& operator=(const Array& other) = delete;
 
 public:
     Array(int initCapacity = 1);
     Array(const Array& other);
-    //~Array();
-
-    int getSize() const;
-
-    void append(const Vector2D& vector);
-
-    Vector2D& at(const int index, bool& success);
-    const Vector2D& at(const int index, bool& success) const;
+    ~Array();
 
     void displayAll();
+
+    void append(const Vector2D& vector);
+    bool at(const int index, Vector2D& member);
+    const bool at(const int index, Vector2D& member) const;
+
+    Array transform(Vector2D (*f)(const Vector2D& vector)) const;
 };
 
 #endif
