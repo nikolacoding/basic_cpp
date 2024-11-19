@@ -9,29 +9,30 @@
 // 
 
 int main(void){
-    Matrix m(3, 4);
+    Matrix m(3, 3);
 
 #pragma region decl
     m.m_content[0] = 1;
-    m.m_content[1] = 1;
-    m.m_content[2] = 2;
-    m.m_content[3] = 2;
+    m.m_content[1] = 2;
+    m.m_content[2] = 3;
 
-    m.m_content[4] = 3;
-    m.m_content[5] = 3;
-    m.m_content[6] = 4;
-    m.m_content[7] = 4;
+    m.m_content[3] = 4;
+    m.m_content[4] = 5;
+    m.m_content[5] = 6;
 
-    m.m_content[8] = 5;
-    m.m_content[9] = 5;
-    m.m_content[10] = 6;
-    m.m_content[11] = 6;
+    m.m_content[6] = 7;
+    m.m_content[7] = 8;
+    m.m_content[8] = 9;
+
 #pragma endregion
 
     Matrix m2 = m;
     Matrix m3 = m + m2;
+    Matrix m4 = m3.transform([](double d){
+        return d * 5;
+    });
 
-    std::cout << "test: " << m[2][3] << std::endl;
+    m4 *= m;
     
-    // m3.displayAll();
+    m4.displayAll();
 }   

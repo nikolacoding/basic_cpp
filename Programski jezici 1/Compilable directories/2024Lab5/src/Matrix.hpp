@@ -17,12 +17,18 @@ public:
     Matrix(const Matrix& other);
     //~Matrix();
 
-    void setValue(const int m, const int n, const double value);
     void displayAll() const;
+
+    void setValue(const int m, const int n, const double value);
+    Matrix transform(double (*f)(double)) const;
 
     // sabiranje
     Matrix operator+(const Matrix& other) const;
     void operator+=(const Matrix& other);
+
+    // mnozenje
+    Matrix operator*(const Matrix& other) const;
+    void operator*=(const Matrix& other);
 
     // mnozenje skalarom
     Matrix operator*(const double quotient) const;
@@ -35,11 +41,9 @@ public:
     double* operator[](const int index) const;
 
     // TODO:
-    // 1. mnozenje
     // 2. ispis na izlaz
     // 3. unos sa ulaza
     // 4. jedinicna staticka matrica
-    // 5. cista transform metoda
 };
 
 #endif

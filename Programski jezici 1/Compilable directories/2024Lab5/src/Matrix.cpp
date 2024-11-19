@@ -3,7 +3,8 @@
 Matrix::Matrix(int nInit, int mInit) : 
     m_n(nInit), m_m(mInit), m_content(new double[m_m * m_n]) {
     
-
+    for (int i = 0; i < this->totalSize(); i++)
+        this->m_content[i] = 0;
 }
 
 Matrix::Matrix(const Matrix& other) : 
@@ -17,17 +18,6 @@ int Matrix::totalSize() const {
     return this->m_m * this->m_n;
 }
 
-//  n = 3, m = 4
-//
-//  1   1   2   2
-//  3   3   4   4
-//  5   5   6   6
-// 
-
-void Matrix::setValue(const int m, const int n, const double value){
-    this->m_content[n * this->m_m + m] = value;
-}
-
 void Matrix::displayAll() const {
     for (int i = 0; i < this->m_n; i++){
         for (int j = 0; j < this->m_m; j++){
@@ -36,6 +26,20 @@ void Matrix::displayAll() const {
         std::printf("\n");
     }
 }
+
+void Matrix::setValue(const int m, const int n, const double value){
+    this->m_content[n * this->m_m + m] = value;
+}
+
+Matrix Matrix::transform(double (*f)(double)) const {
+    Matrix newMatrix(this->m_n, this->m_m);
+
+    for (int i = 0; i < newMatrix.totalSize(); i++)
+        newMatrix.m_content[i] = (*f)(this->m_content[i]);
+
+    return newMatrix;
+}
+
 // #############
 // # Operatori #
 // #############
@@ -56,6 +60,40 @@ void Matrix::operator+=(const Matrix& other){
     
     for (int i = 0; i < this->totalSize(); i++)
         this->m_content[i] += other.m_content[i];
+}
+
+Matrix Matrix::operator*(const Matrix& other) const {
+    const Matrix& m1 = *this;
+    const Matrix& m2 = other;
+    Matrix newMatrix(m1.m_m, m2.m_n);
+    // row - m
+    // col - n
+    for (int i = 0; i < m1.m_m; i++){
+        for (int j = 0; j < m2.m_n; j++){
+            int sum = 0;
+            for (int k = 0; k < m1.m_n; k++){
+                newMatrix.m_content[i * newMatrix.m_n + j] += m1.m_content[i * m1.m_n + k] * m2.m_content[k * m2.m_n + j];
+            }
+        }
+    }
+    return newMatrix;
+}
+
+void Matrix::operator*=(const Matrix& other) {
+    Matrix m1(*this);
+    const Matrix& m2 = other;
+
+    for (int i = 0; i < this->totalSize(); i++)
+        this->m_content[i] = 0;
+
+    for (int i = 0; i < m1.m_m; i++){
+        for (int j = 0; j < m2.m_n; j++){
+            int sum = 0;
+            for (int k = 0; k < m1.m_n; k++){
+                this->m_content[i * m1.m_n + j] += m1.m_content[i * m1.m_n + k] * m2.m_content[k * m2.m_n + j];
+            }
+        }
+    }
 }
 
 void Matrix::operator*=(const double quotient){
