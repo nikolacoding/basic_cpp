@@ -15,12 +15,17 @@ private:
 public:
     Matrix(int nInit = 2, int mInit = 2);
     Matrix(const Matrix& other);
+    Matrix(Matrix&& other);
     //~Matrix();
 
     void displayAll() const;
 
     void setValue(const int m, const int n, const double value);
     Matrix transform(double (*f)(double)) const;
+
+    // dodjela
+    void operator=(const Matrix& other);
+    void operator=(Matrix&& other);
 
     // sabiranje
     Matrix operator+(const Matrix& other) const;
@@ -39,10 +44,12 @@ public:
 
     // indeksiranje
     double* operator[](const int index) const;
+    double& operator()(int i, int j) const;
+
+    friend std::ostream& operator<<(std::ostream& stream, const Matrix& matrix);
+    friend std::istream& operator>>(std::istream& stream, Matrix& matrix);
 
     // TODO:
-    // 2. ispis na izlaz
-    // 3. unos sa ulaza
     // 4. jedinicna staticka matrica
 };
 

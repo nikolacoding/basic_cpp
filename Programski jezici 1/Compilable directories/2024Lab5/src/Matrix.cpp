@@ -14,6 +14,10 @@ Matrix::Matrix(const Matrix& other) :
         this->m_content[i] = other.m_content[i];
 }
 
+Matrix::Matrix(Matrix&& other) : m_m(other.m_m), m_n(other.m_n), m_content(other.m_content) {
+    other.m_content = nullptr;
+}
+
 int Matrix::totalSize() const {
     return this->m_m * this->m_n;
 }
@@ -38,6 +42,24 @@ Matrix Matrix::transform(double (*f)(double)) const {
         newMatrix.m_content[i] = (*f)(this->m_content[i]);
 
     return newMatrix;
+}
+
+void Matrix::operator=(const Matrix& other){
+    if (this != &other){
+        std::cout << "a\n";
+        this->m_m = other.m_m;
+        this->m_n = other.m_n;
+        for (int i = 0; i < this->totalSize(); i++)
+            this->m_content[i] = other.m_content[i];
+    }
+}
+
+void Matrix::operator=(Matrix&& other){
+    std::cout << "b\n";
+    this->m_m = other.m_m;
+    this->m_n = other.m_n;
+    this->m_content = other.m_content;
+    other.m_content = nullptr;
 }
 
 // #############
@@ -132,4 +154,26 @@ double* Matrix::operator[](const int index) const {
         ret[i] = this->m_content[index * size + i];
 
     return ret;
+}
+
+double& Matrix::operator()(int i, int j) const {
+    return this->m_content[i * this->m_m + j];
+}
+
+std::ostream& operator<<(std::ostream& stream, const Matrix& matrix) {
+    for (int i = 0; i < matrix.m_n; i++){
+        for (int j = 0; j < matrix.m_m; j++){
+            stream << "      " << matrix.m_content[i * matrix.m_m + j];
+        }
+        stream << std::endl;
+    }   
+    return stream;
+}
+
+// pretpostavlja se da su instanci matrice vec dodijeljene validne vrijednosti
+std::istream& operator>>(std::istream& stream, Matrix& matrix) {
+    for (int i = 0; i < matrix.totalSize(); i++){
+        stream >> matrix.m_content[i];
+    }
+    return stream;
 }
