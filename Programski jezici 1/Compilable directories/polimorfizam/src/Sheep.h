@@ -3,10 +3,10 @@
 
 #include "Animal.h"
 
-class Sheep : public Animal{
+class Sheep final : public Animal{
 public:
     Sheep();
-    virtual void makeSound() const override;
+    virtual void makeSound() const override final;
 };
 
 #endif
