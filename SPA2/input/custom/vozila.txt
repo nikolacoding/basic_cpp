@@ -1,0 +1,2 @@
+PatrolTaxi,0
+EuroTaxi,2

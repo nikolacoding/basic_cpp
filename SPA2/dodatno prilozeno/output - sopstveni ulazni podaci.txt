@@ -1,0 +1,23 @@
+Pokretanje simulacije sa licnim (custom) ulaznim podacima:
+
+===========================================================================================
+PS C:\Users\Nikola\Desktop\Projekti\basic_cpp\SPA2>  & 'c:\Users\Nikola\.vscode\extensions\ms-vscode.cpptools-1.22.11-win32-x64\debugAdapters\bin\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-palnqez2.qos' '--stdout=Microsoft-MIEngine-Out-mzdhlcrf.flx' '--stderr=Microsoft-MIEngine-Error-2ouspqsc.p01' '--pid=Microsoft-MIEngine-Pid-j1ok0n2o.q1e' '--dbgExe=C:\msys64\ucrt64\bin\gdb.exe' '--interpreter=mi' 
+> EuroTaxi [ID: 2] krece po korisnika putanjom: 2 -> 4 -> 5 [dist: 40]
+> PatrolTaxi [ID: 1] krece po korisnika putanjom: 0 -> 1 -> 6 -> 3 -> 5 -> 4 -> 2 -> 9 [dist: 175]
+>> PatrolTaxi [ID: 1] je zavrsilo voznju na putanji: 9 -> 2 [dist: 30]
+>> EuroTaxi [ID: 2] je zavrsilo voznju na putanji: 5 -> 3 -> 6 -> 1 -> 0 [dist: 105]
+> EuroTaxi [ID: 2] krece po korisnika putanjom: 0 -> 1 [dist: 10]
+> PatrolTaxi [ID: 1] krece po korisnika putanjom: 2 [dist: 0]
+>> PatrolTaxi [ID: 1] je zavrsilo voznju na putanji: 2 -> 9 [dist: 30]
+> PatrolTaxi [ID: 1] krece po korisnika putanjom: 9 -> 2 -> 4 -> 5 -> 3 -> 6 -> 7 [dist: 140]
+>> PatrolTaxi [ID: 1] je zavrsilo voznju na putanji: 7 [dist: 0]
+>> EuroTaxi [ID: 2] je zavrsilo voznju na putanji: 1 -> 6 -> 7 [dist: 55]
+Ukupno vrijeme cekanja korisnika na taksi: 830
+Ukupno vrijeme prevoza korisnika: 220
+PatrolTaxi [ID: 1]:
+   Broj voznji: 3
+   Predjeni put: 235
+EuroTaxi [ID: 2]:
+   Broj voznji: 2
+   Predjeni put: 160
+===========================================================================================
