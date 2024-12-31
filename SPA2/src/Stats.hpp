@@ -2,8 +2,11 @@
 #define STATS_H
 
 #include "Vehicle.hpp"
+#include "Trip.hpp"
+#include "Graph.hpp"
 
 #include <vector>
+using std::vector;
 
 struct Stats final {
     Stats(std::vector<Vehicle>& vehicles) : vehicles(vehicles) {}
@@ -14,7 +17,7 @@ struct Stats final {
 
     void incrementTotalTrips(Vehicle& vehicle, int value);
     void incrementTotalDistance(Vehicle& vehicle, int value);
-    void logAllStats() const;
+    void logAllStats(Graph& graph, vector<Trip>& allTrips) const;
 };
 
 #endif

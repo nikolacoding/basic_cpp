@@ -31,7 +31,7 @@ void Simulation::Run(const string inputFolderName){
 
     CheckForInputExceptions(graph, trips, vehicles);
     MainLoop(graph, trips, vehicles, time, stats);
-    stats.logAllStats();
+    stats.logAllStats(graph, trips);
 }
 
 // glavna petlja simulacije koja u sustini samo prolazi kroz svaki korisnicki upit redom kako su zadani u datoteci
